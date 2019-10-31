@@ -1,0 +1,197 @@
+.text-wave {
+    font-family: Rosario;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 148.5%;
+    /* or 24px */
+    color: #FFFFFF;
+}
+
+@font-face {
+    font-family: "TCRC Bod-Yig";
+    src: url("./../../assets/fonts/tcrcbyn1.ttf") format("woff2"), url("./../../assets/fonts/tcrcbyn1.ttf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bgc {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+.bgi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../assets/images/image.png");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.info-title {
+    position: absolute;
+    top: 41%;
+    transform: translateX(-36%);
+    left: 50%;
+    font-weight: 100;
+    font-size: 97px;
+}
+
+.sound-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 200px auto;
+    .sound-wrapper {
+        display: flex;
+        position: relative;
+        height: 540px;
+        margin-bottom: 200px;
+    }
+    .inner-title {
+        overflow: hidden;
+        h3 {
+            font-size: 43px;
+            font-family: "Rosarivo";
+            font-weight: 200;
+            backface-visibility: hidden;
+            mix-blend-mode: difference;
+        }
+    }
+    .image-sound-container {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+    }
+    .text-sound-container {
+        p {
+            font-family: "Rosario";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 148.5%;
+            /* or 24px */
+        }
+    }
+}
+
+.image-brush {
+    overflow: hidden;
+    border-radius: 100%;
+    width: 1425px;
+    margin: 0 auto;
+}
+
+.image-flag {
+    position: absolute;
+    right: -40px;
+    bottom: -80px;
+    width: 94px;
+    height: 288px;
+    background: #3c3c3c;
+    box-shadow: -8px 4px 28px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    .trcb {
+        font-family: "TCRC Bod-Yig";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 79px;
+        text-align: center;
+        color: #ffffff;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+}
+
+
+/**
+ * Variables
+ */
+
+
+/**
+  * Styles
+  */
+
+.c-transition {
+    //height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    //width: 400px;
+    &::before {
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/ink-photo-frame.png");
+        background-position: 50% 50%;
+        background-size: 100% 100%;
+        content: "";
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    &::after {
+        //animation: ink-transition 1.5s steps(39) 0.5s forwards;
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/ink-transition-sprite.png");
+        background-size: 100% 100%;
+        content: "";
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-1.25%);
+        width: 4000%;
+    }
+    &.is-active::after {
+        animation: ink-transition 1.5s steps(39) 0.5s forwards;
+    }
+}
+
+.c-transition__img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+/**
+  * Keyframes
+  */
+
+@keyframes ink-transition {
+    0% {
+        transform: translateX(-1.25%);
+    }
+    99% {
+        opacity: 1;
+        transform: translateX(-98.75%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-98.75%);
+    }
+}
+
+.c-exposure {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.w-text--quotation {
+    p {
+        width: 658px;
+        font-family: "Rosario";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+        color: #FFCB8E;
+    }
+}

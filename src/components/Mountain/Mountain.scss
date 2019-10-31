@@ -1,0 +1,35 @@
+.c-mountain {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin: 150px auto;
+    position: relative;
+    height: 800px;
+    .c-frame {
+        width: 660px;
+        height: 435px;
+        left: 84px;
+        top: 2170px;
+        background: #3B3B3B;
+        border: 12px solid rgba(255, 203, 142, 0.34);
+        box-sizing: border-box;
+        box-shadow: 19px 4px 28px rgba(0, 0, 0, 0.25);
+        padding: 30px;
+        .wrapper-text {
+            height: 372px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+    .w-image {
+        position: absolute;
+        right: 100px;
+        top: 165px;
+        z-index: -1;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}

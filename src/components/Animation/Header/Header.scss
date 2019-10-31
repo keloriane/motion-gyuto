@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+.header-gallery--nav {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.information--navigation-container {
+    overflow: hidden;
+}
+
+.information--navigation {
+    height: 50px;
+    max-width: 400px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(4px);
+    /* Note: backdrop-filter has minimal browser support */
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    h4 {
+        font-weight: 300;
+        font-size: 34px;
+        line-height: 100%;
+        /* or 50px */
+        color: #FFFFFF;
+        margin-bottom: 16px;
+    }
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+}
+
+.pagination--number {
+    width: 145px;
+    background: rgba(0, 0, 0, 0.77);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        font-family: Old Standard TT;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 34px;
+        line-height: 148.5%;
+        /* or 50px */
+        color: #FFFFFF;
+    }
+}

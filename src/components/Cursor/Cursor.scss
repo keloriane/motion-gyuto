@@ -1,0 +1,102 @@
+@import "./../../assets/modules/easing.scss";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@function rem($pixel) {
+    @return $pixel/16+rem;
+}
+
+$desktop: 1920px;
+body {
+    background-color: #3c3c3c;
+}
+
+#o-main {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.c-cursor {
+    height: rem(18);
+    position: fixed;
+    left: rem(-9);
+    top: rem(-9);
+    z-index: 9;
+    width: rem(18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none;
+    backface-visibility: hidden;
+    mix-blend-mode: difference;
+    &:before {
+        // border: 1px solid hsla(0, 0%, 83%, 1);
+        background-color: #ffffff;
+        border-radius: 50%;
+        height: 100%;
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        mix-blend-mode: difference;
+        .is-hover & {
+            mix-blend-mode: difference;
+            transform: scale(2.5);
+            transition: all 0.3s ease-in-out $easeOutQuad;
+        }
+    }
+}
+
+button {
+    height: 40px;
+    width: 60px;
+}
+
+#box-css {
+    animation: slidein 20s infinite;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(-500px);
+    }
+    to {
+        transform: translateX(1000px);
+    }
+}
+
+#inner-cursor {
+    height: 10px;
+    position: fixed;
+    z-index: 10;
+    width: 10px;
+    display: flex;
+    left: -0.25rem;
+    top: -0.25rem;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 100%;
+    pointer-events: none;
+    &:before {
+        background: rgb(255, 68, 68);
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 10;
+        top: 10;
+        .is-hover & {
+            border: 1px solid hsla(274, 100%, 50%, 1);
+            transform: scale(2.5);
+        }
+    }
+}
