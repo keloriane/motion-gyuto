@@ -44,7 +44,7 @@ const Cursor = () => {
     page.addEventListener("mousemove", mouseMovePos);
     page.addEventListener("mouseover", updateOnHover);
     page.addEventListener("click", e => {
-      console.log(e.target);
+    
     });
   });
   return (

@@ -1,3 +1,63 @@
+ul{
+    display: flex;
+    position: absolute;
+          overflow: hidden;
+          width: 500px;
+          height: 400px;
+        //   li {
+        //     width: 500px;
+        //     height: 400px;
+        //     //color: $text;
+        //     display: flex;
+        //     align-items: center;
+        //     position: absolute;
+           
+        //     &:nth-child(1) {
+        //       &:after {
+        //         content: "";
+        //         position: absolute;
+        //         height: 12px;
+        //         width: 310px;
+        //         //background: $text;
+               
+        //         left: 0;
+        //         top: 206px;
+        //       }
+        //     }
+        //     &:nth-child(2) {
+        //       &:after {
+        //         content: "";
+        //         position: absolute;
+        //         height: 12px;
+        //         width: 148px;
+        //         //background: $text;
+       
+        //         left: 54px;
+        //         top: 126px;
+        //       }
+        //     }
+        //     &:nth-child(3) {
+        //       &:after {
+        //         content: "";
+        //         position: absolute;
+        //         height: 12px;
+        //         width: 280px;
+        //         //background: $text;
+               
+        //         left: 144px;
+        //         top: 166px;
+        //       }
+        //     }
+        // }
+}
+.t-image {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 .animation-container {
     width: 100vw;
     height: 100vh;
@@ -20,7 +80,7 @@
 #main-img {
     width: 100%;
     height: 100vh;
-    background-image: url(./../../assets/images/image42.jpg);
+    // background-image: url(./../../assets/images/image42.jpg);
     background-size: cover;
     z-index: -1;
     position: absolute;
@@ -80,8 +140,8 @@
                         height: 300px;
                         overflow: hidden;
                         img {
-                            width: 100%;
-                            max-width: 425px;
+                            
+                            max-width: 500px;
                         }
                     }
                     .text-container {

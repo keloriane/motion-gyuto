@@ -1,92 +1,10 @@
-import React, { Component, Fragment } from 'react';
-import { turnRight, newAnim, stop, onClickPoint } from "./functions";
-import { videos, introduction } from "../../../data";
+import React from 'react'
 
-class Mandala extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-            playedIntroduction: "",
-			coords: "",
-		};
-	}
-	componentWillMount(){
-		document.getElementById("background").removeEventListener("mouseenter", () => newAnim(videos , this.props.symbole));
-		document.getElementById("border").removeEventListener("mouseenter", () => stop(this.test.bind(this), videos, this.props.symbole));
-		document.body.removeEventListener("load", this.bertrandFiltre(introduction.url));
-		localStorage.getItem("playedIntroduction") && this.setState({
-			playedIntroduction: JSON.parse(localStorage.getItem('playedIntroduction'))
-		})
-		localStorage.getItem("coords") && this.setState({
-			coords: JSON.parse(localStorage.getItem('coords'))
-		})
-	}
-
-	componentDidMount(){
-		setTimeout(()=>{ turnRight() }, 300);
-		document.getElementById("background").addEventListener("mouseenter", () => newAnim(videos, this.props.symbole));
-		document.getElementById("border").addEventListener("mouseenter", () => stop(this.test.bind(this), videos, this.props.symbole));
-		document.body.addEventListener("load", this.bertrandFiltre(introduction.url));
-		if (!localStorage.getItem("coords")) {
-			localStorage.setItem("coords", JSON.stringify(""))
-		}
-	}
-
-	componentWillMount(){
-		localStorage.getItem("playedIntroduction") && this.setState({
-			playedIntroduction: JSON.parse(localStorage.getItem('playedIntroduction'))
-		})
-		localStorage.getItem("coords") && this.setState({
-			coords: JSON.parse(localStorage.getItem('coords'))
-		})
-	}
-
-
-	componentWillUpdate(nextState){
-		localStorage.setItem("playedIntroduction", JSON.stringify("true"))
-	}
-
-	test(id, event, coords){
-		this.props.getId(id);
-		if (event === "click") {
-			this.props.getVideoUrl(videos[id].url.fr);
-			onClickPoint(this.getCoords.bind(this), coords)
-		}
-	}
-
-	getCoords(lastCoord, previousCoord) {
-		let varcoords;
-		if (previousCoord[0] === "0" && previousCoord[1] === "0") {
-			varcoords = " <circle style='pointer-events: none' fill='red' cx=" + lastCoord[0] + " cy=" + lastCoord[1] + " r='0.95' />"
-			this.setState({
-				coords : this.state.coords + varcoords
-			})
-			localStorage.setItem("coords", JSON.stringify(this.state.coords))
-		} else {
-			varcoords = " <circle style='pointer-events: none' fill='red' cx=" + lastCoord[0] + " cy=" + lastCoord[1] + " r='0.95' /> " 
-			+ " <line x1=" + lastCoord[0] + " y1=" + lastCoord[1] + " x2=" + previousCoord[0] + " y2=" + previousCoord[1] + " style='stroke:red ; stroke-width:0.6 ; pointer-events: none'/> " 
-			+ " <circle style='pointer-events: none' fill='red' cx=" + previousCoord[0] + " cy=" + previousCoord[1] + " r='0.95' /> ";
-			this.setState({
-				coords : this.state.coords + varcoords
-			})
-			localStorage.setItem("coords", JSON.stringify(this.state.coords))
-		}
-	}
-
-	bertrandFiltre(id){
-		if(this.state.playedIntroduction === "") {
-            this.setState({
-                playedIntroduction : "true",
-			});
-            
-        }
-	}
-
-	render(){
-		return (
-	<Fragment>
-	<div id="background"></div>
-	<div id="mandala-container">
+const Element = () => {
+    return (
+        <>
+            <div id="background"></div>
+	<div id="contenair">
 		<div id="border"></div>
 		<div className="mandala">
 			<svg id="rotate" viewBox="0 0 248.527 248.527">
@@ -7990,15 +7908,11 @@ class Mandala extends Component {
 						</g>
 					</g>
 				</g>
-				<g id="addLines" dangerouslySetInnerHTML={{__html: this.state.coords}}></g>
+				
 			</svg>
 		</div>
-	</div>
-	</Fragment>	
-
-
-		);
-	}
+    </div>
+        </>
+    )
 }
-
-export default Mandala;
+export default Element

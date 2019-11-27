@@ -306,7 +306,7 @@ module.exports = function(webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
-        "TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
+        "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
         "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
         "TimelineLite": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
         "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),

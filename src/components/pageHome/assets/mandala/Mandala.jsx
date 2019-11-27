@@ -78,7 +78,7 @@ class Mandala extends Component {
             this.setState({
                 playedIntroduction : "true",
 			});
-            
+            this.props.getVideoUrlIntroduction(id);
         }
 	}
 
