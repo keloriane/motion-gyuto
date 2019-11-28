@@ -3,11 +3,10 @@ import React from "react";
 import "./App.css";
 // import Animation from './components/Animation/Animation'
 import Cursor from "./components/Cursor/Cursor";
-import Slider from "./components/Slider/Slider";
+import Gallery from "./components/Gallery/Gallery";
 import Home from "./components/Mandala/Home";
 
-import Mandala from './components/Mandala/Mandala'
-
+import Mandala from "./components/Mandala/Mandala";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
       {/* <Mandala /> */}
       {/* <Animation /> */}
       {/* <Home />  */}
-      <Slider />
+      <Gallery />
     </div>
   );
 }
